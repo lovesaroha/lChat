@@ -13,7 +13,7 @@ Demo [lchat.lovesaroha](https://lchat.lovesaroha.com)
 - Gorilla web socket.
 - JWT go.
 
-## Docker Go SDK
+## Packages
 Simple install the package to your [$GOPATH](https://github.com/golang/go/wiki/GOPATH "GOPATH") with the [go tool](https://golang.org/cmd/go/ "go command") from shell:
 ```bash
 go get -u "github.com/gorilla/websocket"
