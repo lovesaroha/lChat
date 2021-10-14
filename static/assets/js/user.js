@@ -6,7 +6,7 @@
 // All functions related to user.
 // User and default variables defined.
 let user = { emailAddress: "", token: 0, socket: { id: 0 } };
-let socketURL = "ws://localhost:3000"
+let socketURL = "ws://localhost:3003"
 
 // Get user email from local storage.
 if (localStorage.getItem("user-data") != null) {
@@ -34,7 +34,6 @@ function initializeWebSocket() {
           try {
                message = JSON.parse(response.data);
           } catch (e) { return; }
-          console.log(message);
           switch (message.type) {
                case "userJoined":
                     handleUserJoined(message);
