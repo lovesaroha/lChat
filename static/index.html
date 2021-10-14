@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+     <!-- Required meta tags. -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <meta name="theme-color" content="#ffffff" />
+     <meta name="description" content="lchat">
+     <title>lChat</title>
+     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+     <link rel="stylesheet" href="./assets/css/fa.min.css">
+</head>
+
+<body>
+     <div class="container w-full mx-auto max-w-8/12 md:px-4 pb-8 mb-6" id="view_id"></div>
+     <!-- Footer. -->
+     <div class="mb-2 card text-center p-2 mx-auto max-w-xl">
+          <h4 class="text-subtitle"><a href="https://github.com/lovesaroha/lChat" target="_blank">LoveSaroha/lChat</a>
+          </h4>
+          <h3 class="text-subtitle font-bold mb-0 hover:underline cursor-pointer"
+               onclick="javascript: window.location = 'https://lovesaroha.com';">Love Saroha</h3>
+          <h4 class="text-gray">lovesaroha1994@gmail.com</h4>
+     </div>
+     <!-- Modal element. -->
+     <div class="fixed z-50 inset-0 overflow-y-auto" onclick="javascript: closeModalBackground(event);"
+          style="display: none;" id="modal_id" aria-labelledby="modal-title" role="dialog" aria-modal="true"></div>
+     <!-- Include script.js file -->
+     <script type="text/javascript" src="./assets/js/helper.js"></script>
+     <script type="text/javascript" src="./assets/js/router.js"></script>
+     <script type="text/javascript" src="./assets/js/script.js"></script>
+     <script type="text/javascript" src="./assets/js/user.js"></script>
+     <script type="text/javascript" src="./assets/js/room.js"></script>
+     <script type="text/javascript" src="./assets/js/messages.js"></script>
+</body>
+
+<!-- Home page template. -->
+<template id="homePageTemplate_id">
+     <!-- User info. -->
+     <div class="card mb-2 p-4 mx-auto max-w-xl md:flex justify-between flex-wrap" id="userInfo_id"></div>
+     <!-- Header. -->
+     <center>
+          <h1 class="font-bold display-1 underline">
+               Chat Rooms
+          </h1>
+          <h4 class="text-subtitle mb-6">Create your own personal chat room or join other rooms.</h4>
+     </center>
+     <!-- Rooms. -->
+     <div id="rooms_id"></div>
+</template>
+
+<!-- Login page template. -->
+<template id="loginPageTemplate_id">
+     <!-- Header. -->
+     <center>
+          <h1 class="font-bold display-1 underline">
+               lChat
+          </h1>
+          <h4 class="text-subtitle mb-6">A simple group chat app implemented using WebSockets.</h4>
+     </center>
+     <div class="card p-4 max-w-xl mb-4 mx-auto">
+          <form onsubmit="javascript: signIn(event);">
+               <div class="bg-light max-w-md p-2 mb-2">
+                    <h4 class="text-gray mb-0">Enter your email address to get started.</h4>
+               </div>
+               <input class="w-full mb-2" type="email" placeholder="Email address.." name="emailAddress" required>
+               <button name="submit" type="submit">Get Started</button>
+          </form>
+     </div>
+</template>
+
+<!-- Room page template. -->
+<template id="roomPageTemplate_id">
+     <center>
+          <h1 class="font-bold display-1 underline mb-2" id="roomName_id"></h1>
+               <button class="mb-6" onclick="javascript: window.location = '/#/';">Leave this room</button>
+     </center>
+     <div class="grid md:grid-cols-3 grid-cols-1 gap-4">
+          <div class="col-span-1" id="members_id"></div>
+          <div class="col-span-2 shadow-xl p-1">
+               <div class="mb-2 scroll-y-hidden h-50" id="messages_id">
+               </div>
+               <input type="text" placeholder="Send Message.." maxlength="255" class="w-full"
+               onchange="javascript: sendMessage(this);" />
+          </div>
+     </div>
+</template>
+
+</html>
