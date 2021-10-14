@@ -10,7 +10,7 @@ import (
 // Main function.
 func main() {
 
-	var PORT = ":3000"
+	var PORT = ":3003"
 
 	// Serve static files.
 	fs := http.FileServer(http.Dir("./static"))
